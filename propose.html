@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>For My Love ❤️</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd1dc, #ff9a9e);
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .envelope {
+      width: 320px;
+      height: 200px;
+      background: #e11d48;
+      border-radius: 0 0 20px 20px;
+      cursor: pointer;
+      position: relative;
+      box-shadow: 0 25px 40px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: #f43f5e;
+      transform-origin: top;
+      transition: transform 0.8s ease;
+    }
+
+    .envelope.open .flap {
+      transform: rotateX(180deg);
+    }
+
+    .heart {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 42px;
+      transition: opacity 0.4s;
+    }
+
+    .envelope.open .heart {
+      opacity: 0;
+    }
+
+    .letter {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 280px;
+      background: white;
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+      opacity: 0;
+      transform: translate(-50%, 40px);
+      transition: all 0.8s ease;
+    }
+
+    .envelope.open + .letter {
+      opacity: 1;
+      transform: translate(-50%, -160px);
+    }
+
+    .letter h2 {
+      margin: 0 0 12px;
+      color: #e11d48;
+    }
+
+    .letter p {
+      color: #444;
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .hint {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="heart">❤️</div>
+    </div>
+
+    <div class="letter">
+      <h2>My Love 💖</h2>
+
+      <!-- ✨ WRITE YOUR MESSAGE BELOW ✨ -->
+      <p>
+        This is my way of saying how much I love yaa.<br><br>
+        Thank you for being in my life and I will always do my best to make yaa feel. I know was sometimes a stupid idiot, but I was always in love with yaa. So will you make this idiot your valentine? 💍
+      </p>
+      <!-- ✨ WRITE YOUR MESSAGE ABOVE ✨ -->
+
+      <div class="hint">Click the envelope again 💌</div>
+    </div>
+  </div>
+
+  <script>
+    const envelope = document.getElementById("envelope");
+    envelope.addEventListener("click", () => {
+      envelope.classList.toggle("open");
+    });
+  </script>
+
+</body>
+</html>
